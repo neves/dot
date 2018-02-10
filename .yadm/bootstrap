@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Este script é executado por: yadm bootstrap
+
+# tema principal
+git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+
+# plugins adicionais
+git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+# Universal version manager
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+
+# zplug para gerenciar plugins
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
