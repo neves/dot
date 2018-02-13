@@ -2,6 +2,8 @@
 
 # Este script é executado por: yadm bootstrap
 
+ln -sf ~/.yadm/exclude ~/.yadm/repo.git/info/exclude
+
 # tema principal
 if [ -d ~/.zprezto ]; then
   cd ~/.zprezto

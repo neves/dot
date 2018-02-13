@@ -1,0 +1,46 @@
+# Arquivo .gitignore utilizado por: yadm status -u
+
+# Configs
+/.config/yarn/
+/.aws/
+
+# Caches
+/.bundle/
+/.cache/
+/.bash_sessions/
+
+# History Files
+/.bash_history
+/.zhistory
+/.psql_history
+/.sqlite_history
+
+# Frameworks
+/.yadm/repo.git/
+/.zprezto/
+/.oh-my-zsh/
+/.zplug/
+/.vscode/
+/.rubies/
+/.npm/
+/.node-gyp/
+/.gem/
+/.asdf/
+/.avocode/
+/.iterm2*
+
+# OSX Home Directories
+.DS_Store
+/icloud*
+/osx
+/Music/
+/Documents/
+/Downloads/
+/Pictures/
+/dotfiles/
+/Movies/
+/Library/
+/Public/
+/Desktop/
+/Applications/
+/.Trash/
