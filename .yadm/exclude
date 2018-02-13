@@ -1,8 +1,10 @@
 # Arquivo .gitignore utilizado por: yadm status -u
 
 # Configs
-/.config/yarn/
+/.config/
 /.aws/
+/.ssh/
+/.yarnrc
 
 # Caches
 /.bundle/
@@ -14,6 +16,8 @@
 /.zhistory
 /.psql_history
 /.sqlite_history
+/.node_repl_history
+/.lesshst
 
 # Frameworks
 /.yadm/repo.git/
@@ -44,3 +48,11 @@
 /Desktop/
 /Applications/
 /.Trash/
+
+# Ubuntu
+/.gnome/
+/.thunderbird/
+/.mysql/
+/.mozilla/
+/.local/share/
+/.sudo_as_admin_successful

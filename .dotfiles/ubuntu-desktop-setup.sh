@@ -41,7 +41,7 @@ gsettings set org.gnome.gedit.preferences.editor scheme 'cobalt'
 gsettings set org.gnome.gedit.preferences.editor display-right-margin true
 
 # internet mais rápida
-sudo tee /proc/sys/net/ipv6/conf/all/disable_ipv6 <<<"1"
+sudo tee /proc/sys/net/ipv6/conf/all/disable_ipv6 <<< "1"
 
 update sudo apt
 sudo apt install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
@@ -57,9 +57,6 @@ sudo apt install -y xclip
 sudo apt install -y silversearcher-ag
 
 sudo snap login marcos.neves@gmail.com
-
-sudo apt install -y guake
-sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 sudo apt install -y gnome-tweak-tool
 sudo apt install -y chrome-gnome-shell
