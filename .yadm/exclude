@@ -33,10 +33,13 @@
 /.avocode/
 /.iterm2*
 
+# OSX Links
+/.aws
+/osx
+/icloud*
+
 # OSX Home Directories
 .DS_Store
-/icloud*
-/osx
 /Music/
 /Documents/
 /Downloads/
