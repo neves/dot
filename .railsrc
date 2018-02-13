@@ -1,0 +1,3 @@
+-B       # Skip Bundle
+-T       # Skip Test-Unit
+-d mysql # Use DB MySql
