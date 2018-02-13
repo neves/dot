@@ -3,13 +3,30 @@
 # Este script é executado por: yadm bootstrap
 
 # tema principal
-git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+if [ -d ~/.zprezto ]; then
+  cd ~/.zprezto
+  git pull --rebase --stat origin master
+  git submodule update --init --recursive
+  cd -
+else
+  git clone --depth 1 --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+fi
 
 # plugins adicionais
-git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+if [ -d ~/.oh-my-zsh ]; then
+  cd ~/.oh-my-zsh
+  git pull --rebase --stat origin master
+  cd -
+else
+  git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 
 # Universal version manager
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+if [ ! -d ~/.asdf ]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+fi
 
 # zplug para gerenciar plugins
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+if [ ! -d ~/.zplug ]; then
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
