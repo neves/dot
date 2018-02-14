@@ -43,6 +43,9 @@ gsettings set org.gnome.gedit.preferences.editor display-right-margin true
 # internet mais rápida
 sudo tee /proc/sys/net/ipv6/conf/all/disable_ipv6 <<< "1"
 
+# aumentar o limite de watches para auto reload do webpack funcionar
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
 update sudo apt
 sudo apt install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 sudo apt install -y apt-transport-https ca-certificates software-properties-common sqlite3 libsqlite3-dev 
@@ -63,6 +66,10 @@ sudo apt install -y chrome-gnome-shell
 # to work this gnome extension https://extensions.gnome.org/extension/1043/gnomestatspro/
 sudo apt install -y gir1.2-gtop-2.0 gir1.2-networkmanager-1.0
 
+# YADM
+sudo apt -y install yadm
+yadm clone git@github.com:neves/dot.git
+
 # DOCKER
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -70,17 +77,6 @@ sudo apt update
 sudo apt install -y docker-ce
 sudo groupadd docker
 sudo systemctl enable docker
-
-# PREZTO
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-# use oh-my-zsh isolated plugins
-git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-
-cat <<'EOF' >> ~/.zshrc
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-EOF
 
 # MOUSE WHEEL SPEED
 sudo apt install -y imwheel
