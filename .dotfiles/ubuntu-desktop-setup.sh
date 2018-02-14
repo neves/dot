@@ -161,6 +161,19 @@ asdf reshim python
 # precisa do docker e só funciona com npm, não com yarn
 npm install -g aws-sam-local
 
+# HEROKU
+sudo snap install heroku --classic
+
+# SENSORS
+sudo apt install -y lm-sensors stress hardinfo psensor
+sudo sensors-detect
+/etc/init.d/kmod start
+sudo service module-init-tools start
+pip install s-tui && asdf reshim python
+stress -c 4 -t 60
+sensors -u
+watch cat /sys/class/thermal/thermal_zone0/temp
+
 # COMMANDS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 # suspend: systemctl suspend

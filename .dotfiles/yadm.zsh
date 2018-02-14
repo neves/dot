@@ -1,7 +1,11 @@
 alias y="yadm"
 alias ys="yadm status -s"
+# show untracked files
+alias ysu="yadm status -s -u"
 alias yp="yadm push"
 alias yu="yadm pull --rebase --autostash"
+alias yd="yadm icdiff"
+alias ydc="yadm icdiff --cached"
 # Listar todos os arquivos adicionados no git
 alias yl="yadm ls-files"
 # commit com os arquivos modificados como mensagem
