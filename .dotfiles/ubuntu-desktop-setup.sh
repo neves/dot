@@ -70,6 +70,10 @@ sudo apt install -y gir1.2-gtop-2.0 gir1.2-networkmanager-1.0
 sudo apt -y install yadm
 yadm clone git@github.com:neves/dot.git
 
+# MYSQL
+sudo apt -y install mysql-server
+sudo systemctl disable mysql
+
 # DOCKER
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -159,6 +163,13 @@ npm install -g aws-sam-local
 
 # HEROKU
 sudo snap install heroku --classic
+
+# MULTIPLE CLIPBOARDS
+sudo add-apt-repository ppa:hluk/copyq
+sudo apt update
+sudo apt install copyq
+
+
 
 # SENSORS
 sudo apt install -y lm-sensors stress hardinfo psensor
