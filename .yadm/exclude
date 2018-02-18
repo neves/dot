@@ -32,11 +32,17 @@
 /.asdf/
 /.avocode/
 /.iterm2*
+/.serverless*
+/.docker
+/.subversion/
+/.gnupg/
+/.netrc
 
 # OSX Links
 /.aws
 /osx
 /icloud*
+/.ssh
 
 # OSX Home Directories
 .DS_Store
@@ -59,3 +65,13 @@
 /.mozilla/
 /.local/share/
 /.sudo_as_admin_successful
+
+# dotfiles
+/.Brewfile
+/.gitconfig-user
+/.gitconfig.user
+/.gitconfig_global
+/.tool-versions
+/.fasd
+/.fasd-init-cache
+/.zcomp*
