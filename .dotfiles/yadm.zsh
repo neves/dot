@@ -18,7 +18,6 @@ yc() {
   else
     yadm commit -m "$(yadm_status_for_commit_message)"
   fi
-  yadm status
 }
 
 # add only changed files, or parameters
