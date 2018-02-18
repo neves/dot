@@ -1,5 +1,6 @@
 alias y="yadm"
 alias ys="yadm status -s"
+alias yt="yadm status -s"
 # show untracked files
 alias ysu="yadm status -s -u"
 alias yp="yadm push"
@@ -10,7 +11,17 @@ alias ydc="yadm icdiff --cached"
 alias yl="yadm ls-files"
 # commit com os arquivos modificados como mensagem
 alias yadm_status_for_commit_message='yadm status -s | tr -s "\n " "  " | awk ''{$1=$1};1'''
-alias yc='yadm commit -m "$(yadm_status_for_commit_message)"'
+
+yc() {
+	if [[ $# -gt 0 ]]; then
+    yadm commit -m "$*"
+  else
+    yadm commit -m "$(yadm_status_for_commit_message)"
+  fi
+  yadm status
+  yadm ls
+}
+
 # add only changed files, or parameters
 ya() {
   if [[ $# -gt 0 ]]; then

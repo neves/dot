@@ -6,6 +6,7 @@ source ~/.dotfiles/git.zsh
 source ~/.dotfiles/aws.zsh
 source ~/.dotfiles/yadm.zsh
 source ~/.dotfiles/heroku.zsh
+source ~/.dotfiles/iterm2.zsh
 
 if [[ "$OSTYPE" =~ 'linux' ]]; then
   source ~/.dotfiles/ubuntu.zsh

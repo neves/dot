@@ -32,3 +32,33 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gbd='git branch --delete'
 alias gm='git merge'
+
+# git status for project directory tree
+function gst() {
+  # cd "$( dirname "${BASH_SOURCE[0]}" )"
+  # DB=$HOME/Dropbox/git
+  # mkdir -p $DB
+  # rm -f $DB/??-??-??_??-??.txt
+  # touch $DB/$(date +"%d-%m-%y_%H-%M.txt")
+  # cp "${BASH_SOURCE[0]}" $DB/
+  # cp *.rb $DB/
+  cd $PWD
+  ROOT=$PWD
+  for folder in */*/; do
+    if [ -f "$folder/.git/config" ]
+    then
+      color=32
+      printf "\e[${color}m$folder\e[0m\n"
+      cd $folder
+      # git remote -v | cut -f 1 -d ' ' | uniq
+      git status -s | sed 's/^/  /' | head -n 5
+      git status | grep ahead
+      # mkdir -p $DB/$folder/.git
+      # cp .git/config $DB/$folder/.git/
+      cd $ROOT
+    else
+      color=31
+      printf "\e[${color}m$folder\e[0m\n"
+    fi
+  done
+}
