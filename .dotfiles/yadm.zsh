@@ -19,7 +19,7 @@ yc() {
     yadm commit -m "$(yadm_status_for_commit_message)"
   fi
   yadm status
-  yadm ls
+  yadm lg | head -n 1
 }
 
 # add only changed files, or parameters
