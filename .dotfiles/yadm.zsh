@@ -10,7 +10,7 @@ alias ydc="yadm icdiff --cached"
 # Listar todos os arquivos adicionados no git
 alias yl="yadm ls-files"
 # commit com os arquivos modificados como mensagem
-alias yadm_status_for_commit_message='yadm status -s | tr -s "\n " "  " | awk ''{$1=$1};1'''
+alias yadm_status_for_commit_message='yadm diff --cached --name-status | tr -s "\n " "  " | awk ''{$1=$1};1'''
 
 yc() {
 	if [[ $# -gt 0 ]]; then

@@ -1,7 +1,5 @@
-[user]
-	email = marcos.neves@gmail.com
-	name = Marcos Neves
-
+[include]
+    path = ~/.gitconfig-user
 [alias]
     ls = log --all --date=short --format=format:'%C(bold yellow)%h %C(bold green)%ad %C(reset)%s %C(bold blue)[%an]%C(bold red)%d' --graph
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
