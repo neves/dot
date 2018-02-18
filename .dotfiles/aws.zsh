@@ -1,4 +1,4 @@
-if [ $(which aws > /dev/null) ]; then
+if which aws > /dev/null; then
   ASDF_PYTHON=$(asdf which python)
   #  python foi instalado utilizando asdf
   if [ "$ASDF_PYTHON" ]; then
