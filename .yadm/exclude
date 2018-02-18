@@ -65,6 +65,7 @@
 /.mozilla/
 /.local/share/
 /.sudo_as_admin_successful
+/snap/
 
 # dotfiles
 /.Brewfile
