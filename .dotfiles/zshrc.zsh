@@ -3,9 +3,9 @@ source ~/.dotfiles/elapse-timer/start.zsh
 source ~/.dotfiles/prezto.zsh
 source ~/.dotfiles/asdf.zsh
 source ~/.dotfiles/git.zsh
-source ~/.dotfiles/aws.zsh
 source ~/.dotfiles/yadm.zsh
 source ~/.dotfiles/heroku.zsh
+source ~/.dotfiles/aws.zsh
 
 if [[ "$OSTYPE" =~ 'darwin' ]]; then
 	source ~/.dotfiles/iterm2.zsh
