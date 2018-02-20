@@ -1,18 +1,25 @@
-source ~/.dotfiles/elapse-timer/start.zsh
+source "${0:h}/elapse-timer/start.zsh"
 
-source ~/.dotfiles/prezto.zsh
-source ~/.dotfiles/asdf.zsh
-source ~/.dotfiles/git.zsh
-source ~/.dotfiles/yadm.zsh
-source ~/.dotfiles/heroku.zsh
-source ~/.dotfiles/aws.zsh
+source "${0:h}/prezto.zsh"
+source "${0:h}/asdf.zsh"
+source "${0:h}/git.zsh"
+source "${0:h}/yadm.zsh"
+source "${0:h}/heroku.zsh"
+source "${0:h}/aws.zsh"
+source "${0:h}/functions.zsh"
+source "${0:h}/aliases.zsh"
+source "${0:h}/completion.zsh"
 
 if [[ "$OSTYPE" =~ 'darwin' ]]; then
-	source ~/.dotfiles/iterm2.zsh
+	source "${0:h}/iterm2.zsh"
 fi
 
 if [[ "$OSTYPE" =~ 'linux' ]]; then
-  source ~/.dotfiles/ubuntu.zsh
+  source "${0:h}/ubuntu.zsh"
 fi
 
-source ~/.dotfiles/elapse-timer/stop.zsh
+# add local bin folder to path
+PATH=".git/safe/../../bin:node_modules/.bin:$PATH" # mkdir .git/safe
+export -U PATH
+
+source "${0:h}/elapse-timer/stop.zsh"

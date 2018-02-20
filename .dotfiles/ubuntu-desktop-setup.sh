@@ -48,7 +48,7 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 update sudo apt
 sudo apt install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
-sudo apt install -y apt-transport-https ca-certificates software-properties-common sqlite3 libsqlite3-dev 
+sudo apt install -y apt-transport-https ca-certificates software-properties-common sqlite3 libsqlite3-dev libmysqlclient-dev 
 sudo apt install -y zsh
 chsh -s /bin/zsh
 sudo apt install -y curl

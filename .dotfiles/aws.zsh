@@ -5,6 +5,6 @@ if which aws > /dev/null; then
     source "$(dirname $ASDF_PYTHON)/aws_zsh_completer.sh"
   else
     # Não consegue carregar se (which aws_zsh_completer.sh) for um shim
-    source ~/.oh-my-zsh/plugins/aws/aws.plugin.zsh
+    source "${ZDOTDIR:-$HOME}/.oh-my-zsh/plugins/aws/aws.plugin.zsh"
   fi
 fi
