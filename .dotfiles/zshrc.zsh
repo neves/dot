@@ -21,5 +21,7 @@ fi
 # add local bin folder to path
 PATH=".git/safe/../../bin:node_modules/.bin:$PATH" # mkdir .git/safe
 export -U PATH
+# faster nokogiri install
+export -U NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 source "${0:h}/elapse-timer/stop.zsh"

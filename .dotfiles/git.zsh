@@ -31,7 +31,7 @@ alias gcm='git checkout master'
 alias gco='git checkout'
 alias gb='git branch'
 alias gbd='git branch --delete'
-alias gm='git merge'
+alias gm='git merge --no-edit'
 
 # git status for project directory tree
 function gst() {
