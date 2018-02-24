@@ -11,15 +11,15 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
 
 # KEYMAP
 # Overview
-gsettings set org.gnome.desktop.input-sources xkb-options ['caps:super']
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:super']"
 # Alternar de apps igual o Mac
-gsettings set org.gnome.desktop.wm.keybindings switch-applications ['<Primary>Tab']
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Primary>Tab']"
 # CMD+SPACE
-org.gnome.shell.keybindings toggle-overview ['<Primary>space']
+gsettings set org.gnome.shell.keybindings toggle-overview "['<Primary>space']"
 # Alternar entre janelas do App
-gsettings set org.gnome.desktop.wm.keybindings cycle-group-backward ['<Primary><Shift>apostrophe']
-gsettings set org.gnome.desktop.wm.keybindings switch-group-backward ['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']
-gsettings set org.gnome.desktop.wm.keybindings switch-group ['<Super>Above_Tab', '<Alt>Above_Tab']
+gsettings set org.gnome.desktop.wm.keybindings cycle-group-backward "['<Primary><Shift>apostrophe']"
+gsettings set org.gnome.desktop.wm.keybindings switch-group-backward "['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-group "['<Super>Above_Tab', '<Alt>Above_Tab']"
 
 # CLOCK
 gsettings set org.gnome.desktop.interface clock-show-seconds true
@@ -28,7 +28,7 @@ gsettings set org.gnome.desktop.interface clock-show-date true
 # DOCK
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings set org.gnome.extensions.shell.dash-to-dock dock-position 'RIGHT'
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'RIGHT'
 
 # SYSTEM
 gsettings set org.gnome.desktop.interface enable-animations false
@@ -46,25 +46,17 @@ sudo tee /proc/sys/net/ipv6/conf/all/disable_ipv6 <<< "1"
 # aumentar o limite de watches para auto reload do webpack funcionar
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-update sudo apt
-sudo apt install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
-sudo apt install -y apt-transport-https ca-certificates software-properties-common sqlite3 libsqlite3-dev libmysqlclient-dev 
-sudo apt install -y zsh
+sudo apt update
+sudo apt install -y sqlite3 autoconf bison build-essential make \
+libssl-dev libyaml-dev libbz2-dev zlib1g-dev libffi-dev libgdbm3 libgdbm-dev \
+libsqlite3-dev libmysqlclient-dev libncurses5-dev libncursesw5-dev libreadline-dev libreadline6-dev \
+llvm tk-dev xz-utils apt-transport-https ca-certificates software-properties-common \
+zsh curl git gitk icdiff xclip silversearcher-ag \
+chrome-gnome-shell gnome-tweak-tool gir1.2-gtop-2.0 gir1.2-networkmanager-1.0
+
 chsh -s /bin/zsh
-sudo apt install -y curl
-sudo apt install -y git gitk
-sudo apt install -y icdiff
-# like mac's pbcopy
-sudo apt install -y xclip
-# sudo apt install -y snapd # instalado por padrão a partir 16.04 LTS
-sudo apt install -y silversearcher-ag
 
 sudo snap login marcos.neves@gmail.com
-
-sudo apt install -y gnome-tweak-tool
-sudo apt install -y chrome-gnome-shell
-# to work this gnome extension https://extensions.gnome.org/extension/1043/gnomestatspro/
-sudo apt install -y gir1.2-gtop-2.0 gir1.2-networkmanager-1.0
 
 # YADM
 sudo apt -y install yadm
@@ -138,12 +130,12 @@ asdf global ruby 2.5.0
 # node
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 9.5.0
-asdf global nodejs 9.5.0
+asdf install nodejs 9.6.1
+asdf global nodejs 9.6.1
 # python local to avoid using sudo
 asdf plugin-add python
-asdf install python 2.7.14
-asdf global python 2.7.14
+asdf install python 2.7
+asdf global python 2.7
 
 # YARN
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -151,8 +143,8 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install -y yarn
 
 # VSCODE
-wget -c -O vscode.deb 'https://go.microsoft.com/fwlink/?LinkID=760868'
-sudo dpkg -i vscode.deb
+wget -c -O ~/Downloads/vscode.deb 'https://go.microsoft.com/fwlink/?LinkID=760868'
+sudo dpkg -i ~/Downloads/vscode.deb
 code --install-extension nonoroazoro.syncing
 
 # AWS
