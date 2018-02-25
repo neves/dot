@@ -23,9 +23,17 @@ yc() {
 # add only changed files, or parameters
 ya() {
   if [[ $# -gt 0 ]]; then
-    yadm add "$@"
+    yadm add -f "$@"
   else
     yadm add -u
   fi
   yadm status -s
+}
+
+# add file for current platform
+yap() {
+  target="$1##$(uname -s)"
+  mv "$1" "$target"
+  ya "$target"
+  yc
 }
