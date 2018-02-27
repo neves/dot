@@ -1,58 +1,11 @@
 # hibernation nao funciona no kernel 4.13.0-32
 # https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1743094?comments=all
-# gsettings list-recursively | grep -i 
-# MOUSE
-gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
-gsettings set org.gnome.desktop.peripherals.mouse speed 1
-
-# KEYBOARD
-gsettings set org.gnome.desktop.peripherals.keyboard delay 200
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
-
-# KEYMAP
-# Overview
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:super']"
-# Alternar de apps igual o Mac
-gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Primary>Tab']"
-# CMD+SPACE
-gsettings set org.gnome.shell.keybindings toggle-overview "['<Primary>space']"
-# Alternar entre janelas do App
-gsettings set org.gnome.desktop.wm.keybindings cycle-group-backward "['<Primary><Shift>apostrophe']"
-gsettings set org.gnome.desktop.wm.keybindings switch-group-backward "['<Shift><Super>Above_Tab', '<Shift><Alt>Above_Tab']"
-gsettings set org.gnome.desktop.wm.keybindings switch-group "['<Super>Above_Tab', '<Alt>Above_Tab']"
-
-# CLOCK
-gsettings set org.gnome.desktop.interface clock-show-seconds true
-gsettings set org.gnome.desktop.interface clock-show-date true
-
-# DOCK
-gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'RIGHT'
-
-# SYSTEM
-gsettings set org.gnome.desktop.interface enable-animations false
-gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
-
-# EDITOR
-gsettings set org.gnome.gedit.preferences.editor tabs-size 2
-gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
-gsettings set org.gnome.gedit.preferences.editor scheme 'cobalt'
-gsettings set org.gnome.gedit.preferences.editor display-right-margin true
 
 # internet mais rápida
 sudo tee /proc/sys/net/ipv6/conf/all/disable_ipv6 <<< "1"
 
 # aumentar o limite de watches para auto reload do webpack funcionar
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-
-sudo apt update
-sudo apt install -y sqlite3 autoconf bison build-essential make \
-libssl-dev libyaml-dev libbz2-dev zlib1g-dev libffi-dev libgdbm3 libgdbm-dev \
-libsqlite3-dev libmysqlclient-dev libncurses5-dev libncursesw5-dev libreadline-dev libreadline6-dev \
-llvm tk-dev xz-utils apt-transport-https ca-certificates software-properties-common \
-zsh curl git gitk icdiff xclip silversearcher-ag \
-chrome-gnome-shell gnome-tweak-tool gir1.2-gtop-2.0 gir1.2-networkmanager-1.0
 
 chsh -s /bin/zsh
 
