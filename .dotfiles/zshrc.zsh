@@ -18,6 +18,9 @@ if [[ "$OSTYPE" =~ 'linux' ]]; then
   source "${0:h}/ubuntu.zsh"
 fi
 
+# Local NodeJs https://github.com/mklement0/n-install
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
 # add local bin folder to path
 PATH=".git/safe/../../bin:node_modules/.bin:$PATH" # mkdir .git/safe
 export -U PATH
