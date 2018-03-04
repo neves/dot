@@ -1,8 +1,5 @@
-bkp() {
-  if [ $# -lt 1 ]; then
-    echo "Usage: bkp path/to/file.ext\trenames to file.ext.bkp"
-    return 1
-  else
-    mv "$1" "$1.bkp"
-  fi
-}
+FUNCTIONS_DIR="${0:h}/functions"
+# adiciona o diretório de funções no path
+fpath=($FUNCTIONS_DIR $fpath)
+# sinaliza cada função no diretório para ser carregada apenas quando utilizar
+for f ($FUNCTIONS_DIR/*) autoload -Uz ${f##*/}

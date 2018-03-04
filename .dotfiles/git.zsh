@@ -65,7 +65,7 @@ function gst() {
       # cp .git/config $DB/$folder/.git/
       cd $ROOT
     else
-      color=31
+      color=30
       printf "\e[${color}m$folder\e[0m\n"
     fi
   done
