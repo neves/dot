@@ -8,9 +8,16 @@ g() {
     git status
   fi
 }
-
+alias git_status_for_commit_message='git diff --cached --name-status | tr -s "\n " "  " | awk ''{$1=$1};1'''
 unalias gc &> /dev/null
-gc() { noglob git commit -m "$*" && git status -s }
+gc() {
+	if [[ $# -gt 0 ]]; then
+    noglob git commit -m "$*"
+    git status -s
+  else
+    git commit -m "$(git_status_for_commit_message)"
+  fi
+}
 
 unalias ga &> /dev/null
 ga() { git add -A $* && git status }
@@ -32,6 +39,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gbd='git branch --delete'
 alias gm='git merge --no-edit'
+alias gacp='ga && gc && gp'
 
 # git status for project directory tree
 function gst() {

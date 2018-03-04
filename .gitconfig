@@ -1,8 +1,24 @@
 [include]
     path = ~/.gitconfig-user
+[core]
+	excludesfile = ~/.gitignore-global
 [alias]
+    up = pull --rebase --autostash
+    amend = commit --amend --no-edit
+    master = checkout master
+    reset-clean     = "!git status && git reset --hard && git clean -f  && git status"
+    reset-clean-dir = "!git status && git reset --hard && git clean -fd && git status"
     ls = log --all --date=short --format=format:'%C(bold yellow)%h %C(bold green)%ad %C(reset)%s %C(bold blue)[%an]%C(bold red)%d' --graph
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-[core]
-	excludesfile = ~/.gitignore-global
+    aliases = "!git config -l | grep alias | cut -c 7-"
+[diff]
+    # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
+    # instead of a/b/c/d as prefixes for patches
+    mnemonicprefix = true
+    # http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/#comparing_large_chunks_of_text
+    algorithm = patience
+[rerere]
+    # Remember my merges
+    # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
+    enabled = true
