@@ -2,6 +2,7 @@
     path = ~/.gitconfig-user
 [core]
 	excludesfile = ~/.gitignore-global
+	filemode = true
 [alias]
     up = pull --rebase --autostash
     amend = commit --amend --no-edit
