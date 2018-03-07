@@ -28,3 +28,6 @@ export -U PATH
 export -U NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 source "${0:h}/elapse-timer/stop.zsh"
+
+# desligar autocorrect
+unsetopt Correct
