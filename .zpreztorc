@@ -23,7 +23,7 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
 	'git'
 
-alias z=j # fasd jump
+alias z="fasd_cd -d" # fasd jump
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'emacs'
