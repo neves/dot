@@ -3,6 +3,7 @@
 [core]
 	excludesfile = ~/.gitignore-global
 	filemode = true
+	ignorecase = false
 [alias]
     up = pull --rebase --autostash
     amend = commit --amend --no-edit
@@ -13,6 +14,8 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     aliases = "!git config -l | grep alias | cut -c 7-"
+    # sort tags by semver
+    tags = "!git tag | sort --version-sort"
 [diff]
     # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
     # instead of a/b/c/d as prefixes for patches
