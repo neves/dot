@@ -80,15 +80,21 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install ruby 2.5.0
 asdf global ruby 2.5.0
-# node
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 9.6.1
-asdf global nodejs 9.6.1
+# asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+# ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+# asdf install nodejs 9.6.1
+# asdf global nodejs 9.6.1
 # python local to avoid using sudo
 asdf plugin-add python
 asdf install python 2.7
 asdf global python 2.7
+
+# NODEJS
+# a versão nodejs do ASDF está muito bugada, melhor utilizar:
+# https://github.com/tj/n
+# https://github.com/mklement0/n-install
+curl -L https://git.io/n-install | bash
+
 
 # YARN
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
