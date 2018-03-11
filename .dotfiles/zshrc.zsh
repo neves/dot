@@ -5,7 +5,7 @@ source "${0:h}/prezto.zsh"
 source "${0:h}/git.zsh"
 source "${0:h}/yadm.zsh"
 source "${0:h}/heroku.zsh"
-source "${0:h}/aws.zsh"
+# source "${0:h}/aws.zsh"
 source "${0:h}/gcloud.zsh"
 source "${0:h}/functions.zsh"
 source "${0:h}/aliases.zsh"
@@ -21,12 +21,18 @@ fi
 
 which direnv > /dev/null && eval "$(direnv hook zsh)"
 
-test -f /usr/local/share/chruby/chruby.sh && \
-source /usr/local/share/chruby/chruby.sh && \
-source /usr/local/share/chruby/auto.sh
+source /usr/local/share/chruby/chruby.sh 2> /dev/null
+source /usr/local/share/chruby/auto.sh 2> /dev/null
 
 # Local NodeJs https://github.com/mklement0/n-install
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
+# load avn
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
+# add python pip bin path
+PATH="$HOME/.local/bin:$PATH"
+# precisa vir depois do path acima
+source $(which aws_zsh_completer.sh) 2> /dev/null
 
 # add local bin folder to path
 PATH=".git/safe/../../bin:node_modules/.bin:$PATH" # mkdir .git/safe
