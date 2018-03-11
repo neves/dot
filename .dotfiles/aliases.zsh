@@ -7,3 +7,4 @@ alias rm-node_modules="find . -name 'node_modules' -print -type d -prune -exec r
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ls="LANG=C $aliases[ls]"
+alias gem-uninstall-all="gem uninstall -aIx"
