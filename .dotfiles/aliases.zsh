@@ -15,6 +15,10 @@ alias ....="cd ../../.."
 # sort by name
 alias ls="LANG=C $aliases[ls]"
 alias gem-uninstall-all="gem uninstall -aIx"
+# list glogal npm packages
+alias npm-list-global="npm list -g --depth=0"
+# readlink do mac não suporta -f, precisa instalar brew install coreutils
+which greadlink > /dev/null && alias readlink=greadlink
 # show the link of a bin
 lw() {
   where="$(which $1)"

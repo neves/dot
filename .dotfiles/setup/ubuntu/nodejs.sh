@@ -24,6 +24,8 @@ npm install -g avn avn-n
 n 6.11.5
 # install aws lambda node version
 n 6.10.3
+# install aws Elastic BeanStalk
+n 8.9.3
 
 avn setup
 echo 'REMOVE ADDED LINE BY AVN AT END OF ~/.zshrc'
