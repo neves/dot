@@ -11,7 +11,7 @@ alias ydc="yadm icdiff --cached"
 alias yl="yadm ls-files"
 # commit com os arquivos modificados como mensagem
 alias yadm_status_for_commit_message='yadm diff --cached --name-status | tr -s "\n " "  " | awk ''{$1=$1};1'''
-
+alias yacp="ya && yc && yp"
 yc() {
 	if [[ $# -gt 0 ]]; then
     yadm commit -m "$*"
