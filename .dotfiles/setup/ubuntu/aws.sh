@@ -1,2 +1,1 @@
-pip install awscli aws-shell
-asdf reshim python
+pip install awscli aws-shell pjson xmlformatter

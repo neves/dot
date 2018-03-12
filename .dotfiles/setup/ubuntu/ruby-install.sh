@@ -3,3 +3,5 @@ wget -O ruby-install-0.6.1.tar.gz https://github.com/postmodern/ruby-install/arc
 tar -xzvf ruby-install-0.6.1.tar.gz
 cd ruby-install-0.6.1/
 sudo make install
+ruby-install ruby
+gem install bundler rails
