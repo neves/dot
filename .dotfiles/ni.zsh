@@ -25,7 +25,7 @@ ni() {
 
   (
     cd "$NI"
-    \ln -Fsn "$V" node
+    \ln -fsn "$V" node
   )
 
   # REPLACE $PATH

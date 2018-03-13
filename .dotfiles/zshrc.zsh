@@ -1,4 +1,4 @@
-zstyle ':dotfiles:load' verbose 'yes'
+# zstyle ':dotfiles:load' verbose 'yes'
 
 source "${0:h}/start.zsh"
 
