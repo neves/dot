@@ -21,7 +21,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'prompt' \
   'fasd' \
-	'git'
+  'git'
 
 alias z="fasd_cd -d" # fasd jump
 
