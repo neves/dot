@@ -23,21 +23,16 @@ ni() {
     fi
   fi
 
-  (
-    cd "$NI"
-    \ln -fsn "$V" node
-  )
-
   # REPLACE $PATH
-  # NODE=$(which node > /dev/null)
-  # BIN="$T/bin"
-  # if [[ -x "$NODE" ]]; then
-  #   NODE_DIR="${NODE:h}"
-  #   PATH="${PATH/$NODE_DIR/$BIN}"
-  # else
-  #   PATH="$BIN:$PATH"
-  # fi
-  # export -U PATH
+  NODE=$(which node > /dev/null)
+  BIN="$T/bin"
+  if [[ -x "$NODE" ]]; then
+    NODE_DIR="${NODE:h}"
+    PATH="${PATH/$NODE_DIR/$BIN}"
+  else
+    PATH="$BIN:$PATH"
+  fi
+  export -U PATH
 
   # which node
   echo "\e[32mni using node \e[36m$V\e[0m"

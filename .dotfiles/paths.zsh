@@ -13,9 +13,6 @@ PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # add python pip bin path
 PATH="$HOME/.local/bin:$PATH"
 
-# add ni node
-PATH="$HOME/ni/node/bin:$PATH"
-
 # add local bin folder to path
 PATH=".git/safe/../../bin:node_modules/.bin:$PATH" # mkdir .git/safe
 
