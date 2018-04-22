@@ -14,7 +14,7 @@ Pry.config.prompt = [
     prompt_name = '%s|' % magenta % pry.config.prompt_name
     ruby_version = '%s' % red  % RUBY_VERSION
     context = "(%s)" % green % "%s:%s" % [obj, nest_level]
-    rails_version = blue % Rails.version if ENV['RAILS_ENV']
+    rails_version = blue % Rails.version if ENV['RAILS_ENV'] && defined? Rails
     rails_env = green % ENV['RAILS_ENV'][0] if ENV['RAILS_ENV']
     rails = ENV['RAILS_ENV'] ? "%s%s" % [rails_env, rails_version] : ''
 
