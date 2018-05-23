@@ -5,10 +5,10 @@ ni() {
   TMP=/tmp
 
   if [[ $# -eq 0 ]]; then
-    ls -1 "$NI"
     VERSIONS="$TMP/node-versions.json"
     [[ -f "$VERSIONS" ]] || wget https://nodejs.org/dist/index.json -O "$VERSIONS"
     cat "$VERSIONS" | grep -o -E 'v([6-9]|1\d)\.\w+\.\w+' | sort -V
+    ls -1 "$NI"
     return
   fi
 
