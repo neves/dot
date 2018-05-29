@@ -1,0 +1,4 @@
+# findBySize . +100MB
+# find-by-size() {
+  find $1 -type f -size $2 \( ! -name /Volumes/ \) -exec ls -lh {} \; 2> /dev/null | awk '{ print $5 "\t" $9 }'
+# }
