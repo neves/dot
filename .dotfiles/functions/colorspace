@@ -1,0 +1,4 @@
+# function colorspace() {
+  i=0
+  identify -verbose "$1[$i]" | grep Colorspace
+# }
