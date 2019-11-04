@@ -1,3 +1,9 @@
+# Novo DotFiles
+
+http://mneves.gitlab.io/dot/
+
+https://mneves.keybase.pub/
+
 # DOTFILES 2018
 
 Utilizando https://thelocehiliosan.github.io/yadm para gerenciar
